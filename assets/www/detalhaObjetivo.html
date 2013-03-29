@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>myGoals</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link href="style/bootstrap.css" rel="stylesheet">
+<link href="style/datepicker.css" rel="stylesheet">
+
+<style>
+body {
+	padding-top: 0px;
+}
+</style>
+<link href="style/bootstrap-responsive.css" rel="stylesheet">
+<link rel="icon-precomposed" href="images/klipper.png">
+
+
+<script type="text/javascript" src="js/jquery.min.js" class="include"></script>
+<script type="text/javascript" src="js/jquery.jqplot.min.js"
+	class="include"></script>
+<script type="text/javascript"
+	src="js/syntaxhighlighter/scripts/shCore.min.js"></script>
+<script type="text/javascript"
+	src="js/syntaxhighlighter/scripts/shBrushJScript.min.js"></script>
+<script type="text/javascript"
+	src="js/syntaxhighlighter/scripts/shBrushXml.min.js"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.logAxisRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.canvasTextRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.canvasAxisLabelRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.canvasAxisTickRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.dateAxisRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.categoryAxisRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.barRenderer.min.js" class="include"></script>
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(
+			function() {
+				var line1 = [ [ 'Comprar um cachorro', 7 ],
+						[ 'Plantar uma arvore', 9 ], [ 'Dominar o mundo', 15 ],
+						[ 'Voar', 12 ] ];
+				var plot1b = $.jqplot('chart', [ line1 ], {
+					series : [ {
+						renderer : $.jqplot.BarRenderer
+					} ],
+					axesDefaults : {
+						tickRenderer : $.jqplot.CanvasAxisTickRenderer,
+						tickOptions : {
+							fontFamily : 'Georgia',
+							fontSize : '8pt',
+							angle : -30
+						}
+					},
+					axes : {
+						xaxis : {
+							renderer : $.jqplot.CategoryAxisRenderer
+						}
+					}
+				});
+			});
+</script>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+	
+				<ul class="nav">
+					<li><a class="brand" href="index.html"><img alt=""
+							src="images/klipper.png"> myGoals</a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="index.html"><h3>New</h3></a></li>
+					<li><a href="detalhaObjetivo.html"><h3>Goals</h3></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<form class="form-horizontal" align="right">
+			<a href="listaObjetivos.html"><div id="chart" style="height: 50%; width: 85%;"></div></a>
+		</form>
+	</div>
+
+	<style type="text/css">
+.jqplot-point-label {
+	white-space: nowrap;
+}
+
+div.jqplot-target {
+	margin: 40px;
+}
+</style>
+
+</body>
+</html>

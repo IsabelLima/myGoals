@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link type="text/css" rel="stylesheet" href="js/jquery.jqplot.min.css"
+	class="include" />
+<link type="text/css" rel="stylesheet" href="js/examples.min.css" />
+<link type="text/css" rel="stylesheet"
+	href="js/syntaxhighlighter/styles/shCoreDefault.min.css" />
+<link type="text/css" rel="stylesheet"
+	href="js/syntaxhighlighter/styles/shThemejqPlot.min.css" />
+<style>
+body {
+	padding-top: 40px;
+}
+</style>
+<link href="style/bootstrap-responsive.css" rel="stylesheet">
+<link href="style/bootstrap.css" rel="stylesheet">
+<link rel="icon-precomposed" href="images/klipper.png">
+
+
+
+<script src="common/jquery.js"></script>
+<script src="common/bootstrap-transition.js"></script>
+<script src="common/bootstrap-alert.js"></script>
+<script src="common/bootstrap-modal.js"></script>
+<script src="common/bootstrap-dropdown.js"></script>
+<script src="common/bootstrap-scrollspy.js"></script>
+<script src="common/bootstrap-tab.js"></script>
+<script src="common/bootstrap-tooltip.js"></script>
+<script src="common/bootstrap-popover.js"></script>
+<script src="common/bootstrap-button.js"></script>
+<script src="common/bootstrap-collapse.js"></script>
+<script src="common/bootstrap-carousel.js"></script>
+<script src="common/bootstrap-typeahead.js"></script>
+
+<script type="text/javascript" src="js/jquery.min.js" class="include"></script>
+<script type="text/javascript" src="js/jquery.jqplot.min.js"
+	class="include"></script>
+<script type="text/javascript"
+	src="js/syntaxhighlighter/scripts/shCore.min.js"></script>
+<script type="text/javascript"
+	src="js/syntaxhighlighter/scripts/shBrushJScript.min.js"></script>
+<script type="text/javascript"
+	src="js/syntaxhighlighter/scripts/shBrushXml.min.js"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.logAxisRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.canvasTextRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.canvasAxisLabelRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.canvasAxisTickRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.dateAxisRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.categoryAxisRenderer.min.js" class="include"></script>
+<script type="text/javascript"
+	src="js/plugins/jqplot.barRenderer.min.js" class="include"></script>
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(
+			function() {
+				var plot2 = $.jqplot('chart', [
+						[ [ 2, 1 ], [ 4, 2 ], [ 6, 3 ], [ 3, 4 ] ],
+						[ [ 5, 1 ], [ 1, 2 ], [ 3, 3 ], [ 4, 4 ] ],
+						[ [ 4, 1 ], [ 7, 2 ], [ 1, 3 ], [ 2, 4 ] ] ], {
+					// Tell the plot to stack the bars.
+					stackSeries : true,
+					captureRightClick : true,
+					seriesDefaults : {
+						renderer : $.jqplot.BarRenderer,
+						rendererOptions : {
+							 label: 'eeeeeeeeeeeeeee',      // label to use in the legend for this line.
+							// Put a 30 pixel margin between bars.
+							barMargin : 30,
+							padding: 20,
+							// Highlight bars when mouse button pressed.
+							// Disables default highlighting on mouse over.
+							highlightMouseDown : true,
+							barDirection : 'horizontal'
+
+						},
+						pointLabels : {
+							show : true
+						}
+					},
+					axes : {
+						yaxis : {
+							renderer : $.jqplot.CategoryAxisRenderer
+						}
+					},
+					legend : {
+						show : true,
+						location : 'nw',
+						xoffset: 50,        // pixel offset of the legend box from the x (or x2) axis.
+						yoffset: 50
+					}
+				});
+
+			});
+</script>
+</head>
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<ul class="nav">
+					<li><a class="brand" href="index.html"><img alt=""
+							src="images/klipper.png"> myGoals</a></li>
+					<li class="divider-vertical"></li>
+					<li><a href="index.html"><h3>New</h3></a></li>
+					<li><a href="chart.html"><h3>Goals</h3></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container" align="center">
+		<h1>Goal Name</h1>
+		<br />
+		<p>
+			<button class="btn btn-large btn-inverse">Goal Items</button>
+
+			<button class="btn btn-large btn-inverse">New Goal Item</button>
+		</p>
+
+
+
+	</div>
+	<div id="chart" style="height: 50%; width: 50%;"></div>
+
+	<style type="text/css">
+.jqplot-point-label {
+	white-space: nowrap;
+}
+
+div.jqplot-target {
+	height: 50%;
+	width: 50%;
+	margin: 30px;
+}
+</style>
+	
+</body>
+</html>
